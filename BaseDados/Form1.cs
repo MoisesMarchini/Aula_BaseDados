@@ -15,6 +15,9 @@ using System.Data.SqlServerCe;
 // SQLite
 using System.Data.SQLite;
 
+// MySql
+using MySql.Data.MySqlClient;
+
 namespace BaseDados
 {
     public partial class Form1 : Form
@@ -86,6 +89,10 @@ namespace BaseDados
             {
                 Conexao.Close();
             }
+
+            #endregion
+
+            #region MySql
 
             #endregion
         }
