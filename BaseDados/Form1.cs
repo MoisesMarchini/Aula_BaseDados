@@ -7,8 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlServerCe;
 using System.IO;
+
+// SQL Server Ce
+using System.Data.SqlServerCe;
+
+// SQLite
+using System.Data.SQLite;
 
 namespace BaseDados
 {
@@ -21,6 +26,8 @@ namespace BaseDados
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
+            #region SQL Server CE
+            /*
             string baseDados = Application.StartupPath + @"\db\DBSQLServer.sdf";
             string strConection = @"DataSource = "+ baseDados +"; Password = '1234'";
 
@@ -49,6 +56,38 @@ namespace BaseDados
             {
                 Conexao.Close();
             }
+            */
+            #endregion
+
+            #region SQLite
+
+            string baseDados = Application.StartupPath + @"\db\DBSQLite.db";
+            string strConection = @"Data Source = " + baseDados + "; Version = 3";
+
+            if (!File.Exists(baseDados))
+            {
+                SQLiteConnection.CreateFile(baseDados);
+            }
+
+            SQLiteConnection Conexao = new SQLiteConnection(strConection);
+            //Conexao.ConnectionString = strConection;
+
+            try
+            {
+                Conexao.Open();
+
+                lblResult.Text = "Conectado ao SQLite";
+            }
+            catch (Exception ex)
+            {
+                lblResult.Text = "Erro ao Conectar ao SQLite \n" + ex.Message;
+            }
+            finally
+            {
+                Conexao.Close();
+            }
+
+            #endregion
         }
     }
 }
