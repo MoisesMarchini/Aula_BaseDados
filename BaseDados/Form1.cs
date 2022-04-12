@@ -63,7 +63,7 @@ namespace BaseDados
             #endregion
 
             #region SQLite
-
+            /*
             string baseDados = Application.StartupPath + @"\db\DBSQLite.db";
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
@@ -89,11 +89,43 @@ namespace BaseDados
             {
                 Conexao.Close();
             }
-
+            */
             #endregion
 
             #region MySql
+            // VOLTAR DEPOIS POIS NÃO SEI MEXER NISSO
 
+            /*
+            string strConnection = "server=127.0.0.1;User Id=root;password=pmapass";
+            //string strConection2 = "server=127.0.0.1;User Id=pma;database=curso_db;password=pmapass";
+
+            MySqlConnection Conexao = new MySqlConnection(strConnection);
+
+            try
+            {
+                Conexao.Open();
+
+                lblResult.Text = "Conectado ao MySQL";
+
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = Conexao;
+                comando.CommandText = "CREATE DATABASE IF NOT EXISTS curso_db";
+
+                comando.ExecuteNonQuery();
+                lblResult.Text = "Conectado ao MySQL e base de dados criada com sucesso";
+                comando.Dispose();
+            }
+            catch (Exception ex)
+            {
+                lblResult.Text = "Erro ao Conectar ao MySQL \n" + ex.Message;
+            }
+            finally
+            {
+                Conexao.Close();
+            }
+
+
+            */
             #endregion
         }
     }
