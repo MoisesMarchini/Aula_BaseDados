@@ -63,7 +63,7 @@ namespace BaseDados
             #endregion
 
             #region SQLite
-
+            /*
             string baseDados = Application.StartupPath + @"\db\DBSQLite.db";
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
@@ -89,7 +89,7 @@ namespace BaseDados
             {
                 Conexao.Close();
             }
-
+            */
             #endregion
 
             #region MySql
