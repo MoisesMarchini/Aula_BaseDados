@@ -141,6 +141,7 @@ namespace BaseDados
             this.btnCreate.TabIndex = 7;
             this.btnCreate.Text = "Criar Tabela";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnInsert
             // 
@@ -151,6 +152,7 @@ namespace BaseDados
             this.btnInsert.TabIndex = 8;
             this.btnInsert.Text = "Inserir";
             this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // btnSearch
             // 
@@ -161,6 +163,7 @@ namespace BaseDados
             this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "Procurar";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnDelete
             // 
